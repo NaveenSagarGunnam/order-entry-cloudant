@@ -22,7 +22,7 @@ public class OrderEntryController {
 	private CloudantClient client;
 	
 	private Database db;
-    // Create a new Order
+    
     @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
     public @ResponseBody String orderRequestPersist(@RequestBody OrderRequest order) {
     	db = client.database("orders", false);
