@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.cloudant.client.api.CloudantClient;
 import com.cloudant.client.api.Database;
@@ -23,6 +24,13 @@ public class OrderEntryController {
 	
 	private Database db;
     
+	@RequestMapping("service/{message}")
+	public String welcome(@PathVariable String message) {
+		
+		/*return "welcome to IBM india india";*/
+		return message +" !!! IBM CLOUD Tool chain sample deployment..";
+	}
+
     @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
     public @ResponseBody String orderRequestPersist(@RequestBody OrderRequest order) {
     	db = client.database("orders", false);
