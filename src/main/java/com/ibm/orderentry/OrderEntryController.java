@@ -32,7 +32,7 @@ public class OrderEntryController {
     @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
     public @ResponseBody String orderRequestPersist(@RequestBody OrderRequest order) {
     	db = client.database("orders", false);
-    	order.set_id(UUID.randomUUID().toString());
+    	order.set_id("IBM-"+ UUID.randomUUID().toString());
     	order.setOrderId(System.currentTimeMillis());
        
         Response r = null;
