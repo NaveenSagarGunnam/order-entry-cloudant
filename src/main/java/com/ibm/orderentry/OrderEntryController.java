@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PathVariable;
-
 import com.cloudant.client.api.CloudantClient;
 import com.cloudant.client.api.Database;
 import com.cloudant.client.api.model.Response;
@@ -26,8 +25,7 @@ public class OrderEntryController {
     
 	@RequestMapping("service/{message}")
 	public String welcome(@PathVariable String message) {
-		
-		/*return "welcome to IBM india india";*/
+
 		return message +" !!! IBM CLOUD Tool chain sample deployment..";
 	}
 
